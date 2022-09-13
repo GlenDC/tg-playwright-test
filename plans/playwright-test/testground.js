@@ -1,7 +1,8 @@
-const { invokeMap } = require('@testground/sdk')
+import { invokeMap } from '@testground/sdk';
+import { basicExpressTest } from './basicExpress.js';
 
 const testCases = {
-  basicExpress: require('./basic-express'),
+  basicExpress: basicExpressTest,
 };
 
 (async () => {

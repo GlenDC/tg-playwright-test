@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "playwright": "^1.25.2",
-    "playwright-test": "^8.1.1"
-  }
-}

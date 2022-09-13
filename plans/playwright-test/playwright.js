@@ -1,5 +1,5 @@
-const { chromium } = require('playwright');
-const { expect } = require('playwright-test');
+import { chromium } from 'playwright';
+import { expect } from '@playwright/test';
 
 export async function runPlaywrightTest (runenv, client, url) {
     let browser;
@@ -10,10 +10,16 @@ export async function runPlaywrightTest (runenv, client, url) {
         const page = await browser.newPage();
 
         runenv.recordMessage('playwright: visiting on new page: ' + url);
-        await page.goto(url);
+        await page.goto(url, {
+            waitUntil: 'domcontentloaded',
+        });
+
+        await expect(page).toHaveTitle(/Playwright Tester/);
 
         runenv.recordMessage('playwright: asserting message is available on page...');
-        expect(page.locator('[id="greeting"]')).toContainText('Hello world');
+
+        const locator = page.locator('div[id="greeting"]');
+        await expect(locator).toHaveText(/Hello world/);
     } finally {
         if (browser) {
             browser.close();
