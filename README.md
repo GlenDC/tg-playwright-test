@@ -9,6 +9,7 @@ with a server and a playwright script in one.
 
 Prerequisites:
 - `testground daemon` is running
+  - Tested and ran against [commit 809c50025b7767566f54a14112e3379f2060de24](https://github.com/testground/testground/tree/809c50025b7767566f54a14112e3379f2060de24);
 - Docker
 
 The following test case is implemented:
