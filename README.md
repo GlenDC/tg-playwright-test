@@ -4,9 +4,14 @@ Prerequisites:
 - `testground daemon` is running
 - Docker
 
-The following test cases are implemented:
-`testground run single --plan cypress-test --testcase basic --instances 1 --builder docker:generic --runner local:docker`
-And
-`testground run single --plan cypress-test --testcase multiple --instances 2 --builder docker:generic --runner local:docker`
+The following test case is implemented:
 
-Note that the `multiple` test case is not working, because Testground instances cannot connect to a server on another instance.
+```
+testground run single --plan playwright-test --testcase basicExpress --instances 1 --builder docker:generic --runner local:docker
+```
+
+!! Note, first run:
+
+```
+testground plan import --from ./plans/playwright-test
+```
