@@ -1,0 +1,10 @@
+/.vscode
+/node_modules
+*.env
+*.log
+/lib*
+*.png
+*.xml
+/test-results/
+/playwright-report/
+/playwright/.cache/
