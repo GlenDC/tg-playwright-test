@@ -1,0 +1,33 @@
+[metadata]
+name    = "playwright-composition-test"
+author  = "glendc"
+
+[global]
+plan    = "playwright-composition-test"
+case    = "hello"
+builder = "docker:generic"
+runner  = "local:docker"
+
+[[groups]]
+id = "express-server"
+instances = { min = 1, max = 1, default = 1 }
+
+  [groups.build]
+
+  [groups.build_config]
+  path = "./server"
+
+  [groups.run]
+  test_params = { }
+
+[[groups]]
+id = "playwright-test"
+instances = { min = 1, max = 1, default = 1 }
+
+  [groups.build]
+
+  [groups.build_config]
+  path = "./playwright"
+
+  [groups.run]
+  test_params = { }
