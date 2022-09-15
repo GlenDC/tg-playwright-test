@@ -2,10 +2,10 @@ import {
     invokeMap
 } from '@testground/sdk';
 
-import testServer from './tests/server';
+import testHello from './tests/hello';
 
 const testcases = {
-    server: testServer,
+    hello: testHello,
 }
 
 (async () => {

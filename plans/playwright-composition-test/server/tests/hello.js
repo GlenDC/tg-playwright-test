@@ -12,9 +12,12 @@ export default async (runenv, client) => {
     const addr = `http://${serverAddress}:${serverPort}`;
     runenv.recordMessage('server is listening at: ' + addr);
 
-    // TODO: trigger message to indicate server is ready
+    await client.signalEntry('server-ready');
 
-    // TODO: wait for all tests to be finished :)
+    runenv.recordMessage('server waiting until test is ready');
+
+    const b = await client.barrier('test-ready', 1);
+    await b.wait;
 
     runenv.recordMessage('stopping server');
     await server.stop();
