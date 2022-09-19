@@ -15,4 +15,4 @@ enabled = true
 
 [[testcases]]
 name = "hello"
-instances = { min = 1, max = 1, default = 1 }
+instances = { min = 2, max = 2, default = 2 }

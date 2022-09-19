@@ -4,13 +4,14 @@ author  = "glendc"
 
 [global]
 plan    = "playwright-composition-test"
-case    = "hello"
 builder = "docker:generic"
 runner  = "local:docker"
+case    = "hello"
+total_instances = 2
 
 [[groups]]
 id = "express-server"
-instances = { min = 1, max = 1, default = 1 }
+instances = { count = 1 }
 
   [groups.build]
 
@@ -22,7 +23,7 @@ instances = { min = 1, max = 1, default = 1 }
 
 [[groups]]
 id = "playwright-test"
-instances = { min = 1, max = 1, default = 1 }
+instances = { count = 1 }
 
   [groups.build]
 
