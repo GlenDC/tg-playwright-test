@@ -1,0 +1,13 @@
+{
+  "name": "playwright-composition-test-server",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:GlenDC/tg-playwright-test.git",
+  "author": "glendc",
+  "license": "ISC",
+  "dependencies": {
+    "@testground/sdk": "^0.1.2"
+  }
+}

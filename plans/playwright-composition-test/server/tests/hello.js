@@ -3,6 +3,8 @@ import {
 } from "../lib";
 
 export default async (runenv, client) => {
+    runenv.recordMessage('server::hello testCase started...');
+
     const serverPort = 3001;
     const serverAddress = '127.0.0.1';
 

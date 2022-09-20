@@ -7,6 +7,8 @@ import {
 } from "../api/run";
 
 export default async (runenv, client) => {
+    runenv.recordMessage('playwright::hello testCase started...');
+
     try {
         await runBrowserFn(async (browser) => {
             const page = await browser.newPage();
